@@ -42,8 +42,8 @@ public class Test5 {
                 lt++;
             }
             answer = Math.max(answer, i - lt + 1);
-
         }
+
         return answer;
     }
 }
