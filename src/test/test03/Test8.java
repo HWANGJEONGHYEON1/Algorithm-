@@ -28,13 +28,6 @@ public class Test8 {
         System.out.println(solution(4));
     }
 
-    // 선생님 풀이 슬라이스
-    private static int[] solution1(int K) {
-        int[] answer = new int[K];
-        int[] arr = {20, 12, 20, 10, 23, 17, 10};
-        int lt = 0;
-
-    }
 
     // 내 풀이
     private static int[] solution(int K) {
