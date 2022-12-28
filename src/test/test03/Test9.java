@@ -49,4 +49,13 @@ public class Test9 {
         return answer;
     }
 
+    private static int solution1() {
+        int answer = 0;
+//        String[] arr = "bacaAacba".split("");
+        String input = "bacaAacba";
+        String ana = "abc";
+
+        return answer;
+    }
+
 }
