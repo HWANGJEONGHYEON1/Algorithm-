@@ -11,15 +11,25 @@ public class Test2 {
      */
 
     public static void main(String[] args) {
+        System.out.println(new Test2().solution());
+    }
+
+    public int solution() {
+        int answer = 0;
+        int sum = 0;
         int[] arr = {12, 15, 11, 20, 25, 10, 20, 19, 13, 15};
         int k = 3;
-
-        int max = 0;
-        for (int i = 0; i < arr.length-2; i=i+2) {
-            if (max < arr[i] + arr[i+1] + arr[i+2]) {
-                max = arr[i] + arr[i+1] + arr[i+2];
-            }
+        // 12 + 15 + 11 < max
+        // 15 11 + 20 - 12
+        for (int i = 0; i < k; i++) {
+           sum += arr[i];
         }
-        System.out.println(max);
+        answer = sum;
+        for (int i = k; i < arr.length; i++) {
+            sum = sum + (arr[i] - arr[i - k]);
+            answer = Math.max(answer, sum);
+        }
+
+        return answer;
     }
 }
