@@ -21,6 +21,29 @@ public class Test5 {
     public static void main(String[] args) {
 
         System.out.println(solution());
+        System.out.println(solution1());
+    }
+
+    private static int solution1() {
+        int answer = 0;
+        int k = 2;
+        int[] arr = {1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        int count = 0;
+        int lt = 0;
+        for (int rt = 0; rt < arr.length; rt++) {
+            if (arr[rt] == 0) {
+                count++;
+            }
+
+            while (count > k) {
+                if (arr[lt++] == 0) {
+                    count--;
+                }
+            }
+            answer = Math.max(answer, rt - lt + 1);
+        }
+
+        return answer;
     }
 
     private static int solution() {

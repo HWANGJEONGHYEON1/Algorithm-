@@ -25,6 +25,7 @@ public class Test3 {
             if (sum == specialNumber) {
                 answer ++;
             }
+
             while (sum > specialNumber) {
                 sum -= arr[lt++];
 

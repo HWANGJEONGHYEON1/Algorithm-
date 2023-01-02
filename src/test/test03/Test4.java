@@ -19,7 +19,31 @@ public class Test4 {
         int n = sc.nextInt();
 
         System.out.println(solution(n));
+        System.out.println(solution1(n));
     }
+
+    private static int solution1(int n) {
+        int answer = 0;
+        int lt = 1;
+        int sum = 0;
+        for (int i = 0; i <= n / 2 + 1; i++) {
+            sum += i;
+
+            if (sum == n) {
+                answer++;
+            }
+
+            while (sum > n) { // 21 - 0 - 1 - 2 - 3 -
+                sum = sum - lt++;
+                if (sum == n) {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+
 
     private static int solution(int n) {
         int answer = 0;
