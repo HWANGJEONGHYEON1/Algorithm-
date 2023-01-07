@@ -13,7 +13,30 @@ public class Test12 {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(solution());
+        System.out.println(solution1());
+    }
+
+    private static String solution1() {
+        StringBuilder answer = new StringBuilder();
+        String input = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+        Stack<String> stack = new Stack<>();
+        String[] arr = input.split("");
+
+        for (String s : arr) {
+            if (s.equals(")")) {
+                while (!stack.pop().equals("(")) {
+
+                }
+            } else {
+                stack.push(s);
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            answer.insert(0, stack.pop());
+        }
+
+        return answer.toString();
     }
 
     private static String solution() {
