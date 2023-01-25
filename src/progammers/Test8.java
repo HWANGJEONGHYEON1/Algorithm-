@@ -15,13 +15,18 @@ public class Test8 {
 
     public int solution(int[] ingredient) {
         int answer = 0;
-        Queue<Integer> queue = new LinkedList<>();
+        String hamburger = "1231";
+        StringBuffer sb = new StringBuffer();
+
         for (int i : ingredient) {
-            queue.add(i);
+            sb.append(i);
+            if (sb.lastIndexOf(hamburger) > 0) {
+                answer++;
+
+                sb.delete(sb.lastIndexOf(hamburger), sb.length() - 1);
+            }
         }
 
-
-        System.out.println(answer);
         return answer;
     }
 }
