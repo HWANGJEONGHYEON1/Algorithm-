@@ -2,6 +2,7 @@ package progammers;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 // 옹알이
 public class Test9 {
@@ -15,15 +16,17 @@ public class Test9 {
     public int solution(String[] babbling) {
         int answer = 0;
 
-        Map<String, Integer> map = new HashMap<>();
+        List<String> repeatList = canSpeak.stream()
+                .map(b -> b.concat(b))
+                .collect(Collectors.toList());
+
         for (String speak : babbling) {
+            for (String s : repeatList) {
+                speak = speak.replace(s, "X");
+            }
 
             for (String s : canSpeak) {
-                speak = speak.replace(s, " ");
-            }
-            System.out.println(speak);
-            if (speak.replaceAll(" ", "").equals("")) {
-                answer++;
+                speak = s.replace(s, "Y");
             }
         }
         System.out.println(answer);
