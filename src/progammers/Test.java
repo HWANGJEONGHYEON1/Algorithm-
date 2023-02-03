@@ -18,7 +18,9 @@ public class Test {
                 answer++;
             }
         }
-        System.out.println(answer);
+
+        System.out.println("901231-2190087".charAt(7));
+//        System.out.println(answer);
         return answer;
     }
 }
