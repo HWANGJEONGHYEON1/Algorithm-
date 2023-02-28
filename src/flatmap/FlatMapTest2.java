@@ -9,6 +9,15 @@ public class FlatMapTest2 {
 
     public static void main(String[] args) {
 
+
+        byte[] addr = new byte[4];
+
+        addr[0] = (byte) ((0 >>> 24) & 0xFF);
+        addr[1] = (byte) ((0 >>> 16) & 0xFF);
+        addr[2] = (byte) ((0 >>> 8) & 0xFF);
+        addr[3] = (byte) (0 & 0xFF);
+
+        System.out.println(Arrays.toString(addr));
         FlatMapTest2 flatMapTest2 = new FlatMapTest2();
         List<Order> orders = flatMapTest2.findAll();
 
