@@ -18,24 +18,17 @@ public class Test6 {
     public int[] solution(int n, String[] words) {
         int[] answer = new int[2];
         List<String> list = new ArrayList<>();
-        int count = 0;
         for (int i = 0; i < words.length; i++) {
             if (list.contains(words[i])) {
                 answer[0] = (i+1) % n == 0 ? n : (i+1) % n;
-                answer[1] = i;
-                System.out.println(true);
-                System.out.println(answer[0]);
-                System.out.println(answer[1]);
+                answer[1] = i / n + 1;
                 return answer;
             }
             list.add(words[i]);
 
             if (i > 0 && !words[i - 1].endsWith(String.valueOf(list.get(i).charAt(0)))) {
                 answer[0] = (i+1) % n == 0 ? n : (i+1) % n;
-                answer[1] = i;
-                System.out.println(false);
-                System.out.println(answer[0]);
-                System.out.println(answer[1]);
+                answer[1] = i / n + 1;
                 return answer;
             }
         }
