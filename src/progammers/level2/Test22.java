@@ -2,11 +2,49 @@ package progammers.level2;
 
 import java.util.*;
 
+// 연소된 부분의 수열의 합
 public class Test22 {
 
     public static void main(String[] args) {
         System.out.println(new Test22().solution(new int[] {7,9,1,1,4}));
+        System.out.println(new Test22().solution1(new int[] {7,9,1,1,4}));
     }
+
+    public int solution1(int[] elements) {
+
+        Set<Integer> set = new HashSet<>();
+        int startIndex = 0;
+        while (startIndex < elements.length) {
+
+            for (int i = 0; i < elements.length; i++) {
+                int sum = 0;
+                for (int j = i; j < i + startIndex; j++) {
+                    sum += elements[j % elements.length];
+                }
+                set.add(sum);
+            }
+
+            startIndex++;
+        }
+
+        return set.size();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public int solution(int[] elements) {
 
